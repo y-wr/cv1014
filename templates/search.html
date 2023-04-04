@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hotel Search</title>
+</head>
+<body>
+	<h1>Hotel Search</h1>
+	<form action="/search" method="POST">
+		<label for="search_by">Search by:</label>
+		<select id="search_by" name="search_by">
+            <option value="" selected disabled hidden>Choose an option</option>
+			<option value="price">Price</option>
+			<option value="ratings">Ratings</option>
+		</select>
+		<br>
+		<br>
+		<div id="price_input">
+			<label for="min_price">Minimum Price:</label>
+			<input type="number" id="min_price" name="min_price" min="0" value="0" required>
+			<br>
+			<label for="max_price">Maximum Price:</label>
+			<input type="number" id="max_price" name="max_price" min="0" value="0" required>
+			<br>
+		</div>
+		<div id="ratings_input">
+			<label for="min_rating">Minimum Rating:</label>
+			<input type="number" id="min_rating" name="min_rating" step="0.1" min="0" max="10" value="0" required>
+			<br>
+			<label for="max_rating">Maximum Rating:</label>
+			<input type="number" id="max_rating" name="max_rating" step="0.1" min="0" max="10" value="0" required>
+			<br>
+		</div>
+		<br>
+		<input type="submit" value="Search">
+	</form>
+	<script>
+		// Hide/show input fields based on search_by value
+		const searchBy = document.getElementById("search_by");
+		const priceInput = document.getElementById("price_input");
+		const ratingsInput = document.getElementById("ratings_input");
+		searchBy.addEventListener("change", function() {
+			if (searchBy.value === "price") {
+				priceInput.style.display = "block";
+				ratingsInput.style.display = "none";
+			} else if (searchBy.value === "ratings") {
+				priceInput.style.display = "none";
+				ratingsInput.style.display = "block";
+			}
+		});
+	</script>
+</body>
+</html>

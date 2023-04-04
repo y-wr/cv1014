@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add Hotel Information</title>
+</head>
+<body>
+	<h1>Add Hotel Information</h1>
+	<form method="POST" action="/input">
+		<label for="name">Hotel Name:</label><br>
+		<input type="text" id="name" name="name" required><br>
+		
+		<label for="rating">Rating:</label><br>
+		<input type="number" id="rating" name="rating" min="0" max="10" step="0.1" required><br>
+		
+		<label for="word_rating">Word Rating:</label><br>
+		<input type="text" id="word_rating" name="word_rating"><br>
+		
+		<label for="price">Price (Input numbers only):</label><br>
+		<input type="text" id="price" name="price" pattern="[0-9]+" required><br>
+		
+		<label for="location">Location:</label><br>
+		<input type="text" id="location" name="location"><br>
+		
+		<label for="distance">Distance from City Center:</label><br>
+		<input type="number" id="distance" name="distance" min="0" step="0.1" required>
+		<select name="distance_unit">
+			<option value="m">m</option>
+			<option value="km">km</option>
+		</select><br>
+		
+		<label for="duration">Duration:</label><br>
+		<input type="text" id="duration" name="duration"><br>
+		
+		<input type="submit" value="Submit">
+	</form>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hotel Information</title>
+	<style>
+		table {
+			font-family: Arial, sans-serif;
+			border-collapse: collapse;
+			width: 80%;
+		}
+
+		td, th {
+			border: 1px solid #ddd;
+			text-align: left;
+			padding: 8px;
+		}
+
+		tr:nth-child(even) {
+			background-color: #f2f2f2;
+		}
+
+		th {
+			background-color: #4CAF50;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<a href="/hotel_info"><button>Go Back</button></a>
+	<br>
+	<br>
+    <table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Rating</th>
+				<th>Word Rating</th>
+				<th>Price</th>
+				<th>Location</th>
+				<th>Distance</th>
+				<th>Duration</th>
+			</tr>
+            {% for hotel in searchedData %}
+            <tr>
+                <td>{{hotel["name"]}}</td>
+                <td>{{hotel["rating"]}}</td>
+                <td>{{hotel["wordRating"]}}</td>
+                <td>{{hotel["price"]}}</td>
+                <td>{{hotel["location"]}}</td>
+                <td>{{hotel["distance"]}}</td>
+                <td>{{hotel["duration"]}}</td>
+            </tr>
+            {% endfor %}
+		</thead>
+		<tbody>

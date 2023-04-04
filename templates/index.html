@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hotel Recommendation Form</title>
+  </head>
+  <body>
+    <h1>Hotel Recommendation Form</h1>
+    <form action="/" method="POST">
+      <label for="check-in-date">Check-in Date:</label>
+      <input type="date" id="check-in-date" name="check-in-date" min="{{ today }}" required>
+      <br>
+      <label for="check-out-date">Check-out Date:</label>
+      <input type="date" id="check-out-date" name="check-out-date" min="{{ min_checkout_date }}" required>
+      <br>
+      <label for="adults">Adults:</label>
+      <input type="number" id="adults" name="adults" min="1" max="10" required>
+      <br>
+      <label for="children">Children:</label>
+      <input type="number" id="children" name="children" min="0" max="10" required>
+      <br>
+      <label for="rooms">Number of Rooms:</label>
+      <input type="number" id="rooms" name="rooms" min="1" max="5" required>
+      <br>
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>
